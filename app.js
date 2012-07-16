@@ -1,4 +1,17 @@
 
+var port = process.env.C9_PORT || 19684; 
+
+var http = require('http'); 
+
+http.createServer(function (req, res) { 
+
+    res.writeHead(200, {'Content-Type': 'text/plain'}); 
+    
+    res.end('Que onda mundo\n'); 
+
+}).listen(port);
+
+/*
 var express = require("express");
 var app = express.createServer({host:'http://nsliders.nodester.com/'});
 var io = require('socket.io').listen(app);
@@ -40,3 +53,4 @@ slidesSockets.on("connection", function(socket) {
 
 app.listen(19645);
 console.log("Listening on http://nsliders.nodester.com/:19645/");
+*/
